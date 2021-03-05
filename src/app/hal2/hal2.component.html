@@ -1,0 +1,18 @@
+<h3> {{judulNote}} </h3> 
+<h4> {{ tglDibuat | date:'dd/MM/yyyy'}}  </h4>
+<p> {{isiNote}} </p>
+
+<button (click)="goBack()"> Kembali ke halaman utama </button>
+<ng-template *ngIf="status; then statusFav; else statusNotFav" >
+</ng-template>
+
+<ng-template #statusFav> 
+  <button (click)="unFav()"> Unfavorite </button>
+</ng-template>
+
+<ng-template #statusNotFav> 
+  <button (click)="fav()"> Favorite </button>
+</ng-template>
+
+<br>
+<button (click)="goFavorite()"> Go Favorite </button>

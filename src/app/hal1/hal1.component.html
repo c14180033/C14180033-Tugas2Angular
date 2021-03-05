@@ -1,0 +1,17 @@
+<h3> Halaman 1 </h3>
+Judul <br>
+<input type="text" [(ngModel)]="inputJudul"> <br>
+Isi <br>
+<input type="text" [(ngModel)]="inputIsi"> <br>
+<button (click)="saveNotes()"> Save Note </button>
+<button (click)="goFavorite()"> Go Favorite </button>
+<br>
+<h3> List Notes </h3>
+<div *ngFor='let note of listNotes'>
+  <p style='font-size:20px;'> 
+    <strong> {{note.getJudul()}} </strong> <br>
+    <span style='font-size:14px;'> {{ note.getTglDibuat() | date:'dd/MM/yyyy'}} </span>
+  </p>
+  <button (click)="goDetail(note.getJudul())"> Go Detail </button>
+  <hr>
+</div>

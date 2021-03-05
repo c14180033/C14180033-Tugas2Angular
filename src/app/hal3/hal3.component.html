@@ -1,0 +1,12 @@
+<h3> All Favorite Notes </h3>
+
+<button (click)="goBack()"> Kembali ke halaman utama </button>
+
+<div *ngFor='let note of allFavNotes'>
+  <p style='font-size:20px;'> 
+    <strong> {{note.getJudul()}} </strong> <br>
+    <span style='font-size:14px;'> {{ note.getTglDibuat() | date:'dd/MM/yyyy'}} </span>
+  </p>
+  <button (click)="goDetail(note.getJudul())"> Go Detail </button>
+  <hr>
+</div>
